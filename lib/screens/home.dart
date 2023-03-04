@@ -205,13 +205,14 @@ class _HomeState extends State<Home> {
           color: tdBlack,
           size: 30,
         ),
-        SizedBox(
-          height: 40,
-          width: 40,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image.asset('assets/images/avatar.jpg'),
+        InkWell(
+          child: const CircleAvatar(
+            backgroundImage: AssetImage('assets/images/avatar.jpg'),
+            radius: 20,
           ),
+          onTap: () {
+            Navigator.pushNamed(context, '/profile');
+          },
         ),
         Text(todosList.length.toString(),style: const TextStyle(color: Colors.black))
       ]),
